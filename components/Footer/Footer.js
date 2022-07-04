@@ -21,7 +21,7 @@ const Footer = ({ data }) => {
         <div className={styles.footerBottom}>
           <div className={styles.copyright}>
             <span className={styles.copyrightText}>{footerText}</span>
-            <div className={styles.copyrightCompany}>
+            <a href="https://www.halo-lab.com/" className={styles.copyrightCompany}>
               <div className={styles.copyrightCompanyImg}>
                 <img src={getImg(footerHaloLogo)} alt="Halo Lab icon" />
               </div>
@@ -31,7 +31,7 @@ const Footer = ({ data }) => {
                   {footerHaloText}
                 </span>
               </span>
-            </div>
+            </a>
           </div>
         </div>
       </div>
