@@ -6,7 +6,7 @@ import MobileApp from "./components/MobileApp/MobileApp";
 import Testimonials from "./components/Testimonials/Testimonials";
 
 const Home = ({ page }) => {
-
+  console.log(page)
   return (
     <div className="homepage">
       <Hero data={page} />

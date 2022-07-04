@@ -2,12 +2,10 @@
   "name": "sanity-v3-demo",
   "version": "0.1.0",
   "private": true,
-  "description": "Sanity v3 demo",
   "scripts": {
-    "dev": "concurrently \"next\" \"cd studio && npm start\"",
-    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && next build",
-    "start": "vercel dev",
-    "postinstall": "lerna bootstrap",
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint"
   },
   "dependencies": {
@@ -27,7 +25,6 @@
   },
   "devDependencies": {
     "eslint": "8.19.0",
-    "eslint-config-next": "12.2.0",
-    "lerna": "^5.1.6"
+    "eslint-config-next": "12.2.0"
   }
 }
