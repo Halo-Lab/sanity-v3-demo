@@ -8,8 +8,8 @@ export default function App({ Component, pageProps }) {
     <>
       <Head className="head">
         <link rel="icon" href="/favicon.svg" type="image/svg+xml"></link>
-        <meta name="description" content="Demo create app with Next.js and Prismic/Slicemashine CMS" />
-        <title>prismic-sm-demo</title>
+        <meta name="description" content="Demo create app with Next.js and Sanity CMS" />
+        <title>sanity-v3-demo</title>
       </Head>
       <Layout data={pageProps.data}>
         <Component {...pageProps} />

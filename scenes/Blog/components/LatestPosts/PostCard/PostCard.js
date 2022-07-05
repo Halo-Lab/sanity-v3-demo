@@ -19,7 +19,7 @@ const PostCard = ({ post }) => {
           </div>
           <h3 className={styles.postTitle}>{latestPostsTitle}</h3>
           <p className={styles.postDescription}>
-            {cutDescription(latestPostsText[0].text, 87)}
+            {cutDescription(latestPostsText, 87)}
           </p>
         </a>
       </Link>

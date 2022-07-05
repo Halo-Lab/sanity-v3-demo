@@ -15,7 +15,7 @@ const BlogHero = ({ data }) => {
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>{blogHeroTitle}</h1>
             <p className={styles.heroSubtitle}>
-              {cutDescription(blogHeroText[0].text, 189)}
+              {cutDescription(blogHeroText, 189)}
             </p>
             <ButtonPrimary
               buttonLink={`/blog/${blogHeroLinkHref}`}
