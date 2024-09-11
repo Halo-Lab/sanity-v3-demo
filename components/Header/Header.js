@@ -13,9 +13,7 @@ const Header = ({ data }) => {
       <div className="container">
         <div className={styles.headerWrap}>
           <Link href="/">
-            <a>
-              <img className="logo" src={getImg(logo)} />
-            </a>
+            <img className="logo" src={getImg(logo)} />
           </Link>
           <div className={styles.headerRight}>
             <Navigation headerLinkArr={navItems} />

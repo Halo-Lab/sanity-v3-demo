@@ -12,7 +12,7 @@ function BlogPage({ page }) {
 
   return (
     <div>
-      <Blog page={page} />
+      {/* <Blog page={page} /> */}
     </div>
   );
 }

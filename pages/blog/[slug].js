@@ -15,7 +15,7 @@ function PostPage({ page }) {
 
   return (
     <div>      
-      <Post data={page} />     
+      {/* <Post data={page} />      */}
     </div>
   );
 }
