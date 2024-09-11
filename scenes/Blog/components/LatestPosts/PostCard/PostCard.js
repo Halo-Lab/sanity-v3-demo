@@ -8,20 +8,18 @@ const PostCard = ({ post }) => {
 
   return (
     <div>
-      <Link href={`/blog/${latestPostsLink}`}>
-        <a className={styles.postCard}>
-          <div className={styles.postImageBox}>
-            <img
-              src={getImg(latestPostsImage)}
-              className={styles.postImg}
-              alt={''}
-            />
-          </div>
-          <h3 className={styles.postTitle}>{latestPostsTitle}</h3>
-          <p className={styles.postDescription}>
-            {cutDescription(latestPostsText, 87)}
-          </p>
-        </a>
+      <Link href={`/blog/${latestPostsLink}`} className={styles.postCard}>
+        <div className={styles.postImageBox}>
+          <img
+            src={getImg(latestPostsImage)}
+            className={styles.postImg}
+            alt={''}
+          />
+        </div>
+        <h3 className={styles.postTitle}>{latestPostsTitle}</h3>
+        <p className={styles.postDescription}>
+          {cutDescription(latestPostsText, 87)}
+        </p>
       </Link>
     </div>
   );

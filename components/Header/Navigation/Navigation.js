@@ -6,8 +6,8 @@ const renderMenu = (items) => {
   const menu = items.map((item, index) => {
     return (
       <li key={index}>
-        <Link href={item.linkHref}>
-          <a className={styles.menuLink}>{item.linkName}</a>
+        <Link href={item.linkHref} className={styles.menuLink}>
+          {item.linkName}
         </Link>
       </li>
     );

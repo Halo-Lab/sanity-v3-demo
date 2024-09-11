@@ -12,9 +12,7 @@ const Footer = ({ data }) => {
       <div className="container">
         <div className={styles.footerTop}>
           <Link href="/">
-            <a>
-              <img className="logo" src={getImg(footerLogo)} />
-            </a>
+            <img className="logo" src={getImg(footerLogo)} />
           </Link>
           <Social footerSocialsArr={footerItems} />
         </div>
