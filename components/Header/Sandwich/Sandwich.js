@@ -1,3 +1,4 @@
+"use client";
 import React, { useState } from "react";
 import classnames from "classnames";
 import styles from "./Sandwich.module.scss";

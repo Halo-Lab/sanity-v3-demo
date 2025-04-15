@@ -1,19 +1,17 @@
 import Home from '../scenes/Home/Home';
 import client from '../constants/sanityClient';
 
-export const getStaticProps = async () => {
+async function fetchHomeData() {
   const data = await client.fetch(`*[_type == "home"]`);
-  return {
-    props: { page: data[0] },
-  };
-};
+  return data[0];
+}
 
-function HomePage({ page }) {
+export default async function HomePage() {
+  const page = await fetchHomeData();
+
   return (
     <div>
       <Home page={page} />
     </div>
-  )
+  );
 }
-
-export default HomePage

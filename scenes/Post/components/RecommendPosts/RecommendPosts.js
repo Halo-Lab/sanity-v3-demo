@@ -3,10 +3,9 @@ import styles from "./RecommendPosts.module.scss";
 import PostCard from "../../../Blog/components/LatestPosts/PostCard/PostCard";
 import { useMediaQuery } from "react-responsive";
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Pagination } from "swiper";
+import { Pagination} from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
-SwiperCore.use([Pagination]);
 
 const renderPosts = (data) => {
   const postData = data.latestPosts.slice(0, 3);
@@ -37,6 +36,7 @@ const swiperPost = (data) => {
   
   return (
     <Swiper
+      modules={[Pagination]}
       {...sliderParams}
       pagination={{ clickable: true }}
       className={styles.postsSlider}

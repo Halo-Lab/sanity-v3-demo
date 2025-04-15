@@ -1,3 +1,4 @@
+"use client";
 import Hero from "./components/Hero/Hero";
 import Partners from "./components/Partners/Partners";
 import Benefits from "./components/Benefits/Benefits";
@@ -6,7 +7,6 @@ import MobileApp from "./components/MobileApp/MobileApp";
 import Testimonials from "./components/Testimonials/Testimonials";
 
 const Home = ({ page }) => {
-  console.log(page)
   return (
     <div className="homepage">
       <Hero data={page} />

@@ -4,15 +4,15 @@ import s from "./Testimonials.module.scss";
 import TestimonialsItem from "./TestimonialsItem/TestimonialsItem";
 import classnames from "classnames";
 
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Navigation } from "swiper";
+import { Swiper, SwiperSlide, useSwiper} from "swiper/react";
+import { Navigation} from 'swiper/modules';
 import "swiper/css";
-SwiperCore.use([Navigation]);
 
 import SecondArrowIcon from "../../../../assets/SecondArrowIcon/SecondArrowIcon";
 
 const Testimonials = ({ data }) => {
   const swiperRef = useRef(null);
+  const swiper = useSwiper();
 
   const sliderParams = {
     spaceBetween: 16,
@@ -39,13 +39,14 @@ const Testimonials = ({ data }) => {
 
   const goNext = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slideNext();
+      swiper.slideNext()
     }
   };
 
   const goPrev = () => {
     if (swiperRef.current && swiperRef.current.swiper) {
-      swiperRef.current.swiper.slidePrev();
+      swiper.slidePrev()
+
     }
   };
 
@@ -102,7 +103,7 @@ const Testimonials = ({ data }) => {
           <div className={s.testimonialSlider}>
             <div className={s.sliderWrapper}>
               <Swiper
-                // modules={[Navigation]}
+                modules={[Navigation]}
                 {...sliderParams}
                 // navigation
                 // ref={swiperRef}
