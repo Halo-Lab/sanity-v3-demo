@@ -1,0 +1,30 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.item {
+    &:nth-child(1) {
+        padding-right: 16px;
+        border-right: 1px solid;
+    }
+}
+
+.link {
+    text-transform: capitalize;
+
+    display: block;
+    letter-spacing: 0.05em;
+    color: #21334f;
+    opacity: 0.8;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 17px;
+    // background-color: red;
+    text-decoration: none;
+
+    &:hover {
+      opacity: 1;
+    }
+}

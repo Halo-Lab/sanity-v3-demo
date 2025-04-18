@@ -2,11 +2,11 @@ import React from "react";
 import Link from "next/link";
 import styles from "./Navigation.module.scss";
 
-const renderMenu = (items) => {
-  const menu = items.map((item, index) => {
+const renderMenu = (items, lang) => {
+  const menu = items.map((item, index) => {    
     return (
       <li key={index}>
-        <Link href={item.linkHref} className={styles.menuLink}>
+        <Link href={`/${lang}${item.linkHref}`} className={styles.menuLink}>
           {item.linkName}
         </Link>
       </li>
@@ -16,8 +16,8 @@ const renderMenu = (items) => {
   return menu;
 };
 
-const Navigation = ({ headerLinkArr }) => {
-  return <ul className={styles.menu}>{renderMenu(headerLinkArr)}</ul>;
+const Navigation = ({ headerLinkArr, lang }) => {
+  return <ul className={styles.menu}>{renderMenu(headerLinkArr, lang)}</ul>;
 };
 
 export default Navigation;

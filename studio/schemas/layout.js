@@ -17,6 +17,12 @@ export default {
         name: 'buttonText',
         title: 'Button Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'buttonTextInt',
+        title: 'Button Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'navItems',
@@ -28,21 +34,45 @@ export default {
         name: 'conversionSubTitle',
         title: 'Conversion Sub Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'conversionSubTitleInt',
+        title: 'Conversion Sub Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'conversionTrial',
         title: 'Conversion Trial',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'conversionTrialInt',
+        title: 'Conversion Trial',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'conversionPlaceholder',
         title: 'Conversion Placeholder',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'conversionPlaceholderInt',
+        title: 'Conversion Placeholder',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'conversionTagline',
         title: 'Conversion Tagline',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'conversionTaglineInt',
+        title: 'Conversion Tagline',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'conversionTaglineLogo',
@@ -63,6 +93,12 @@ export default {
         name: 'footerText',
         title: 'Footer Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'footerTextInt',
+        title: 'Footer Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'footerHaloText',

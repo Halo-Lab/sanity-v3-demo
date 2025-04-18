@@ -7,6 +7,12 @@ export default {
         name: 'blogHeroTitle',
         title: 'Blog Hero Title',
         type: 'string',
+        hidden: true,
+      },      
+      {
+        name: 'blogHeroTitleInt',
+        title: 'Blog Hero Title',
+        type: 'internationalizedArrayString',
       },      
       {
         name: 'blogHeroDate',
@@ -17,11 +23,23 @@ export default {
         name: 'blogHeroText',
         title: 'Blog Hero Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'blogHeroTextInt',
+        title: 'Blog Hero Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'blogHeroLinkName',
         title: 'Blog Hero Link Name',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'blogHeroLinkNameInt',
+        title: 'Blog Hero Link Name',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'blogHeroLinkHref',
@@ -48,11 +66,23 @@ export default {
         name: 'recommendPostsTitle',
         title: 'Recommend Posts Title',
         type: 'string',
+        hidden: true,
+      },      
+      {
+        name: 'recommendPostsTitleInt',
+        title: 'Recommend Posts Title',
+        type: 'internationalizedArrayString',
       },      
       {
         name: 'recommendPostsSubTitle',
         title: 'Recommend Posts Sub Title',
         type: 'string',
+        hidden: true,
+      },      
+      {
+        name: 'recommendPostsSubTitleInt',
+        title: 'Recommend Posts Sub Title',
+        type: 'internationalizedArrayString',
       },      
     ],   
   }

@@ -7,16 +7,34 @@ export default {
         name: 'heroTitle',
         title: 'Hero Title',
         type: 'string',
+        hidden: true,
+      },      
+      {
+        name: 'heroTitleInt',
+        title: 'Hero Title',
+        type: 'internationalizedArrayString',
       },      
       {
         name: 'heroText',
         title: 'Hero Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'heroTextInt',
+        title: 'Hero Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'heroButton',
         title: 'Hero Button',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'heroButtonInt',
+        title: 'Hero Button',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'heroButtonHref',
@@ -27,6 +45,12 @@ export default {
         name: 'heroLink',
         title: 'Hero Link',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'heroLinkInt',
+        title: 'Hero Link',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'heroLinkHref',
@@ -42,11 +66,23 @@ export default {
         name: 'partnersTitle',
         title: 'Partners Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'partnersTitleInt',
+        title: 'Partners Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'partnersSubTitle',
         title: 'Partners Sub Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'partnersSubTitleInt',
+        title: 'Partners Sub Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'partnersItems',
@@ -58,21 +94,45 @@ export default {
         name: 'benefitsTitle',
         title: 'Benefits Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'benefitsTitleInt',
+        title: 'Benefits Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'benefitsSubTitle',
         title: 'Benefits Sub Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'benefitsSubTitleInt',
+        title: 'Benefits Sub Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'buttonShowText',
         title: 'Button Show Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'buttonShowTextInt',
+        title: 'Button Show Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'buttonHiddenText',
         title: 'Button Hidden Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'buttonHiddenTextInt',
+        title: 'Button Hidden Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'benefitsItems',
@@ -84,11 +144,23 @@ export default {
         name: 'statsTitle',
         title: 'Stats Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'statsTitleInt',
+        title: 'Stats Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'statsSubTitle',
         title: 'Stats Sub Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'statsSubTitleInt',
+        title: 'Stats Sub Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'statsItems',
@@ -100,21 +172,45 @@ export default {
         name: 'mobileAppTitle',
         title: 'Mobile App Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'mobileAppTitleInt',
+        title: 'Mobile App Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'mobileAppSubTitle',
         title: 'Mobile App Sub Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'mobileAppSubTitleInt',
+        title: 'Mobile App Sub Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'mobileAppText',
         title: 'Mobile App Text',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'mobileAppTextInt',
+        title: 'Mobile App Text',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'mobileAppButton',
         title: 'Mobile App Button',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'mobileAppButtonInt',
+        title: 'Mobile App Button',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'mobileAppImage',
@@ -131,11 +227,23 @@ export default {
         name: 'testimonialsTitle',
         title: 'Testimonials Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'testimonialsTitleInt',
+        title: 'Testimonials Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'testimonialsSubTitle',
         title: 'Testimonials Sub Title',
         type: 'string',
+        hidden: true,
+      },
+      {
+        name: 'testimonialsSubTitleInt',
+        title: 'Testimonials Sub Title',
+        type: 'internationalizedArrayString',
       },
       {
         name: 'testimonialsItems',
@@ -143,8 +251,5 @@ export default {
         type: 'array',
         of: [{type: 'testimonialsItem'}],
       },
-
-
-
     ],   
   }

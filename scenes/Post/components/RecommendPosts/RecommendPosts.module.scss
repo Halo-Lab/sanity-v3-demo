@@ -1,11 +1,10 @@
 .posts {
+  padding: 0 0 50px;
+
   &Slider {
     width: 100%;
     overflow: hidden;
     position: relative;
-  }
-  padding: 0 0 50px;
-  @media screen and (max-width: 768px) {
   }
 
   &Inner {
@@ -43,7 +42,7 @@
 }
 
 .postsInner {
-  div {
+
     :global(.swiper-pagination-bullet-active) {
       --swiper-theme-color: #21334f;
     }
@@ -51,5 +50,5 @@
     :global(.swiper-pagination) {
       bottom: -5px;
     }
-  }
+  
 }

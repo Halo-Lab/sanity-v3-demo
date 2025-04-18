@@ -12,6 +12,12 @@ export default {
       name: 'statsNumberDescription',
       title: 'Stats Number Description',
       type: 'string',
+      hidden: true,
+    },
+    {
+      name: 'statsNumberDescriptionInt',
+      title: 'Stats Number Description',
+      type: 'internationalizedArrayString',
     },
   ],
 }

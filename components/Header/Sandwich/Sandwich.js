@@ -7,7 +7,8 @@ import Navigation from "../Navigation/Navigation";
 import ButtonPrimary from "../../Buttons/ButtonPrimary/ButtonPrimary";
 import SandwichIcon from "../../../assets/SandwichIcon/SandwichIcon";
 import CloseIcon from "../../../assets/CloseIcon/CloseIcon";
-const Sandwich = ({ buttonLink, buttonText, headerLinkArr }) => {
+import LocaleSwitcher from "../../LanguageSwitcher/LanguageSwitcher";
+const Sandwich = ({ buttonLink, buttonText, headerLinkArr, lang }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleSandwichClick = () => {
@@ -50,8 +51,13 @@ const Sandwich = ({ buttonLink, buttonText, headerLinkArr }) => {
             buttonText={buttonText}
           />
           <div onClick={handleSandwichClick}>
-            <Navigation headerLinkArr={headerLinkArr} />
+            <Navigation headerLinkArr={headerLinkArr} lang={lang} />
+
           </div>
+        </div>
+        <div className={styles.sandwichFooter}>
+          <LocaleSwitcher />
+
         </div>
       </div>
     </div>
