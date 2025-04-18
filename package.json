@@ -9,22 +9,24 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "classnames": "^2.5.1",
-    "concurrently": "^9.0.0",
-    "next": "14.2.8",
-    "next-sanity": "^9.4.7",
-    "prettier": "^3.3.3",
-    "react": "18.3.1",
-    "react-dom": "18.3.1",
-    "react-helmet": "^6.1.0",
-    "react-id-swiper": "^4.0.0",
-    "react-responsive": "^10.0.0",
-    "sass": "^1.78.0",
-    "swc-loader": "^0.2.6",
-    "swiper": "^11.1.12"
+    "classnames": "^2",
+    "concurrently": "^9",
+    "next": "^15",
+    "next-sanity": "^9",
+    "prettier": "^3",
+    "react": "^19",
+    "react-dom": "^19",
+    "react-id-swiper": "^4",
+    "react-responsive": "^10",
+    "sass": "^1",
+    "styled-components": "^6",
+    "swc-loader": "^0",
+    "swiper": "^11"
   },
   "devDependencies": {
-    "eslint": "^8.57.0",
-    "eslint-config-next": "14.2.8"
+    "@next/eslint-plugin-next": "^15",
+    "eslint": "^9",
+    "eslint-config-next": "^15",
+    "eslint-plugin-react": "^7"
   }
 }
