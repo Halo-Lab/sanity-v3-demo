@@ -7,27 +7,27 @@ import { Pagination} from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 
-const renderPosts = (data) => {
+const renderPosts = (data, lang) => {
   const postData = data.latestPosts.slice(0, 3);
   const postsList = postData.map(item => {
-    return <PostCard key={item.latestPostsLink} post={item} />;
+    return <PostCard key={item.latestPostsLink} post={item} lang={lang} />;
   });
   return postsList;
 };
 
-const renderSwiperPosts = (data) => {
+const renderSwiperPosts = (data, lang) => {
   const postData = data.latestPosts.slice(0, 4);
   const postsList = postData.map(item => {
     return (
       <SwiperSlide key={item.latestPostsLink}>
-        <PostCard post={item} />
+        <PostCard post={item} lang={lang} />
       </SwiperSlide>
     );
   });
   return postsList;
 };
 
-const swiperPost = (data) => {
+const swiperPost = (data, lang) => {
   const sliderParams = {
     slidesPerView: 1,
     centeredSlides: true,
@@ -41,12 +41,12 @@ const swiperPost = (data) => {
       pagination={{ clickable: true }}
       className={styles.postsSlider}
     >
-      {renderSwiperPosts(data)}
+      {renderSwiperPosts(data, lang)}
     </Swiper>
   ); 
 };
 
-const RecommendPosts = ({data}) => {  
+const RecommendPosts = ({data, lang}) => {  
   const {recommendPostsTitle, recommendPostsSubTitle} = data;
 
   const [isMobile, setMobile] = useState(false);
@@ -64,7 +64,7 @@ const RecommendPosts = ({data}) => {
           <h2 className="section-title">{recommendPostsSubTitle}</h2>
           </div>
         <div className={styles.postsInner}>
-          {isMobile ? swiperPost(data) : renderPosts(data)}
+          {isMobile ? swiperPost(data, lang) : renderPosts(data, lang)}
         </div>
       </div>
     </div>

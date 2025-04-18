@@ -3,12 +3,12 @@ import styles from "./PostCard.module.scss";
 import cutDescription from '../../../../../utils/cutDescription';
 import getImg from '../../../../../utils/getImg';
 
-const PostCard = ({ post }) => {
+const PostCard = ({ post, lang }) => {
   const { latestPostsImage, latestPostsTitle, latestPostsText, latestPostsLink } = post;
 
   return (
     <div>
-      <Link href={`/blog/${latestPostsLink}`} className={styles.postCard}>
+      <Link href={`/${lang}/blog/${latestPostsLink}`} className={styles.postCard}>
         <div className={styles.postImageBox}>
           <img
             src={getImg(latestPostsImage)}

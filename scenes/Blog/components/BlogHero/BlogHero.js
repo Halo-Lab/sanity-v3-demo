@@ -5,8 +5,8 @@ import ArrowIcon from "../../../../assets/ArrowIcon/ArrowIcon";
 import cutDescription from '../../../../utils/cutDescription';
 import getImg from '../../../../utils/getImg'
 
-const BlogHero = ({ data }) => {
-  const { blogHeroTitle, blogHeroText, blogHeroLinkHref, blogHeroImage } = data;
+const BlogHero = ({ data, lang }) => {
+  const { blogHeroTitle, blogHeroText, blogHeroLinkHref, blogHeroImage, blogHeroLinkName } = data;
 
   return (
     <div className="hero">
@@ -18,9 +18,10 @@ const BlogHero = ({ data }) => {
               {cutDescription(blogHeroText, 189)}
             </p>
             <ButtonPrimary
-              buttonLink={`/blog/${blogHeroLinkHref}`}
+              buttonLink={`/${lang}/blog/${blogHeroLinkHref}`}
               mod="button--regular"
               Icon={ArrowIcon}
+              buttonText={blogHeroLinkName}
             />
           </div>
           <div className={styles.heroImage}>

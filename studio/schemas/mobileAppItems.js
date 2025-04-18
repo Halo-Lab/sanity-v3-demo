@@ -12,6 +12,12 @@ export default {
       name: 'mobileAppFunctionText',
       title: 'Mobile App Function Text',
       type: 'string',
+      hidden: true,
+    },    
+    {
+      name: 'mobileAppFunctionTextInt',
+      title: 'Mobile App Function Text',
+      type: 'internationalizedArrayString',
     },    
   ],
 }
