@@ -1,8 +1,9 @@
 import Home from '../../scenes/Home/Home';
-import client from '../../constants/sanityClient';
+import sanityFetch from '../../constants/sanityClient';
+import { groq } from 'next-sanity';
 
 async function fetchHomeData(lang) {
-  const data = await client.fetch(`*[_type == "home"] {
+  const data = await sanityFetch({query: groq`*[_type == "home"] {
     ...,
     "benefitsItems": benefitsItems[] {
     ...,
@@ -42,7 +43,7 @@ async function fetchHomeData(lang) {
     ...,
     "mobileAppFunctionText": mobileAppFunctionTextInt[_key == $lang][0].value,
   },
-    }`,{lang: lang});
+    }`, params: {lang: lang}});
   return data[0];
 }
 
