@@ -1,8 +1,9 @@
 import Post from '../../../../scenes/Post/Post';
-import client from '../../../../constants/sanityClient';
+import sanityFetch from '../../../../constants/sanityClient';
+import { groq } from 'next-sanity';
 
 async function fetchBlogData(lang) {
-  const data = await client.fetch(`*[_type == "blog"] {
+  const data = await sanityFetch({query: groq`*[_type == "blog"] {
     ...,
     "blogHeroLinkName": blogHeroLinkNameInt[_key == $lang][0].value,
     "blogHeroText": blogHeroTextInt[_key == $lang][0].value,
@@ -14,7 +15,7 @@ async function fetchBlogData(lang) {
     },
     "recommendPostsSubTitle": recommendPostsSubTitleInt[_key == $lang][0].value,
     "recommendPostsTitle": recommendPostsTitleInt[_key == $lang][0].value,
-  }`,{lang: lang});
+  }`,params: {lang: lang}});
   return data[0];
 }
 
