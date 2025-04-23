@@ -4,6 +4,13 @@ import ButtonPrimary from "../../../../components/Buttons/ButtonPrimary/ButtonPr
 import ArrowIcon from "../../../../assets/ArrowIcon/ArrowIcon";
 import cutDescription from '../../../../utils/cutDescription';
 import getImg from '../../../../utils/getImg'
+export function sanitizeSlug(slug) {
+  // Remove invisible Unicode characters
+  return slug
+    .replace(/[\u200B-\u200D\uFEFF]/g, '') // Zero-width spaces, joiners, BOM
+    .replace(/[\u0000-\u001F\u007F-\u009F]/g, '') // Control characters
+    .trim(); // Remove leading/trailing spaces
+}
 
 const BlogHero = ({ data, lang }) => {
   const { blogHeroTitle, blogHeroText, blogHeroLinkHref, blogHeroImage, blogHeroLinkName } = data;
@@ -18,7 +25,7 @@ const BlogHero = ({ data, lang }) => {
               {cutDescription(blogHeroText, 189)}
             </p>
             <ButtonPrimary
-              buttonLink={`/${lang}/blog/${blogHeroLinkHref}`}
+              buttonLink={`/${lang}/blog/${sanitizeSlug(blogHeroLinkHref)}`}
               mod="button--regular"
               Icon={ArrowIcon}
               buttonText={blogHeroLinkName}
