@@ -8,32 +8,14 @@ export const heroSection = defineType({
   icon: RocketIcon,
   fields: [
     defineField({
-      name: 'heroTitle',
-      title: 'Hero Title',
-      type: 'string',
-      hidden: true,
-    }),
-    defineField({
       name: 'heroTitleInt',
       title: 'Hero Title',
       type: 'internationalizedArrayString',
     }),
     defineField({
-      name: 'heroText',
-      title: 'Hero Text',
-      type: 'string',
-      hidden: true,
-    }),
-    defineField({
       name: 'heroTextInt',
       title: 'Hero Text',
       type: 'internationalizedArrayString',
-    }),
-    defineField({
-      name: 'heroButton',
-      title: 'Hero Button',
-      type: 'string',
-      hidden: true,
     }),
     defineField({
       name: 'heroButtonInt',
@@ -44,12 +26,6 @@ export const heroSection = defineType({
       name: 'heroButtonHref',
       title: 'Hero Button Href',
       type: 'string',
-    }),
-    defineField({
-      name: 'heroLink',
-      title: 'Hero Link',
-      type: 'string',
-      hidden: true,
     }),
     defineField({
       name: 'heroLinkInt',

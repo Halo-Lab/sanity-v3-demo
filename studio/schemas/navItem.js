@@ -9,12 +9,6 @@ export default {
       type: 'string',
     },
     {
-      name: 'linkName',
-      title: 'Link Name',
-      type: 'string',
-      hidden: true,
-    },
-    {
       name: 'linkNameInt',
       title: 'Link Name',
       type: 'internationalizedArrayString',

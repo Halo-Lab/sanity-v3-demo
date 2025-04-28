@@ -7,22 +7,10 @@ export const testimonialsSection = defineType({
   type: 'object',
   icon: StarIcon,
   fields: [
-    defineField({
-        name: 'testimonialsTitle',
-        title: 'Testimonials Title',
-        type: 'string',
-        hidden: true,
-      }),
       defineField({
         name: 'testimonialsTitleInt',
         title: 'Testimonials Title',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'testimonialsSubTitle',
-        title: 'Testimonials Sub Title',
-        type: 'string',
-        hidden: true,
       }),
       defineField({
         name: 'testimonialsSubTitleInt',

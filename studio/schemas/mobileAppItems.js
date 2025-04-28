@@ -7,13 +7,7 @@ export default {
       name: 'logo',
       title: 'Logo',
       type: 'image',
-    },
-    {
-      name: 'mobileAppFunctionText',
-      title: 'Mobile App Function Text',
-      type: 'string',
-      hidden: true,
-    },    
+    },   
     {
       name: 'textInt',
       title: 'Mobile App Function Text',

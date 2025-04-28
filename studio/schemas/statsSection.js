@@ -7,22 +7,10 @@ export const statsSection = defineType({
   type: 'object',
   icon: BarChartIcon,
   fields: [
-    defineField({
-        name: 'statsTitle',
-        title: 'Stats Title',
-        type: 'string',
-        hidden: true,
-      }),
       defineField({
         name: 'statsTitleInt',
         title: 'Stats Title',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'statsSubTitle',
-        title: 'Stats Sub Title',
-        type: 'string',
-        hidden: true,
       }),
       defineField({
         name: 'statsSubTitleInt',

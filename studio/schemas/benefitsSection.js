@@ -7,22 +7,10 @@ export const benefitsSection = defineType({
   type: 'object',
   icon: SparklesIcon,
   fields: [
-    defineField({
-        name: 'benefitsTitle',
-        title: 'Benefits Title',
-        type: 'string',
-        hidden: true,
-      }),
       defineField({
         name: 'benefitsTitleInt',
         title: 'Benefits Title',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'benefitsSubTitle',
-        title: 'Benefits Sub Title',
-        type: 'string',
-        hidden: true,
       }),
       defineField({
         name: 'benefitsSubTitleInt',
@@ -30,21 +18,9 @@ export const benefitsSection = defineType({
         type: 'internationalizedArrayString',
       }),
       defineField({
-        name: 'buttonShowText',
-        title: 'Button Show Text',
-        type: 'string',
-        hidden: true,
-      }),
-      defineField({
         name: 'buttonShowTextInt',
         title: 'Button Show Text',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'buttonHiddenText',
-        title: 'Button Hidden Text',
-        type: 'string',
-        hidden: true,
       }),
       defineField({
         name: 'buttonHiddenTextInt',

@@ -7,22 +7,10 @@ export const mediaTextSection = defineType({
   type: 'object',
   icon: ImageIcon,
   fields: [
-    defineField({
-        name: 'mobileAppTitle',
-        title: 'Mobile App Title',
-        type: 'string',
-        hidden: true,
-      }),
       defineField({
         name: 'titleInt',
         title: 'Title',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'mobileAppSubTitle',
-        title: 'Mobile App Sub Title',
-        type: 'string',
-        hidden: true,
       }),
       defineField({
         name: 'subTitleInt',
@@ -30,21 +18,9 @@ export const mediaTextSection = defineType({
         type: 'internationalizedArrayString',
       }),
       defineField({
-        name: 'mobileAppText',
-        title: 'Mobile App Text',
-        type: 'string',
-        hidden: true,
-      }),
-      defineField({
         name: 'textInt',
         title: 'Text',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'mobileAppButton',
-        title: 'Mobile App Button',
-        type: 'string',
-        hidden: true,
       }),
       defineField({
         name: 'buttonInt',

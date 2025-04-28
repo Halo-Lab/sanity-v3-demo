@@ -7,23 +7,11 @@ export const partnersSection = defineType({
   type: 'object',
   icon: CaseIcon,
   fields: [
-  defineField({
-        name: 'partnersTitle',
-        title: 'Partners Title',
-        type: 'string',
-        hidden: true,
-      }),
       defineField({
         name: 'partnersTitleInt',
         title: 'Partners Title',
         type: 'internationalizedArrayString',
-      }),
-      defineField({
-        name: 'partnersSubTitle',
-        title: 'Partners Sub Title',
-        type: 'string',
-        hidden: true,
-      }),   
+      }),  
       defineField({
         name: 'partnersSubTitleInt',
         title: 'Partners Sub Title',

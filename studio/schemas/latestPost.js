@@ -14,12 +14,6 @@ export default {
       type: 'image',
     },
     {
-      name: 'latestPostsTitle',
-      title: 'Latest Posts Title',
-      type: 'string',
-      hidden: true,
-    },
-    {
       name: 'latestPostsTitleInt',
       title: 'Latest Posts Title',
       type: 'internationalizedArrayString',
@@ -28,12 +22,6 @@ export default {
       name: 'latestPostsDate',
       title: 'Latest Posts Date',
       type: 'string',
-    },
-    {
-      name: 'latestPostsText',
-      title: 'Latest Posts Text',
-      type: 'string',
-      hidden: true,
     },
     {
       name: 'latestPostsTextInt',

@@ -14,32 +14,14 @@ export default {
       type: 'number',
     },
     {
-      name: 'testimonialsCardText',
-      title: 'Testimonials Card Text',
-      type: 'string',
-      hidden: true,
-    },
-    {
       name: 'testimonialsCardTextInt',
       title: 'Testimonials Card Text',
       type: 'internationalizedArrayString',
     },
     {
-      name: 'testimonialsCardSign',
-      title: 'Testimonials Card Sign',
-      type: 'string',
-      hidden: true,
-    },
-    {
       name: 'testimonialsCardSignInt',
       title: 'Testimonials Card Sign',
       type: 'internationalizedArrayString',
-    },
-    {
-      name: 'testimonialsCardProfession',
-      title: 'Testimonials Card Profession',
-      type: 'string',
-      hidden: true,
     },
     {
       name: 'testimonialsCardProfessionInt',
