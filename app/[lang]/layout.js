@@ -25,11 +25,8 @@ async function fetchLayoutData(lang) {
       "buttonText": buttonTextInt[_key == $lang][0].value,
       "navItems": navItems[]{
       ...,
-      "linkName": linkNameInt[_key == $lang][0].value,},
-      "conversionPlaceholder": conversionPlaceholderInt[_key == $lang][0].value,
-      "conversionSubTitle": conversionSubTitleInt[_key == $lang][0].value,
-      "conversionTagline": conversionTaglineInt[_key == $lang][0].value,
-      "conversionTrial": conversionTrialInt[_key == $lang][0].value,
+      "linkName": linkNameInt[_key == $lang][0].value,
+      },
       "footerText": footerTextInt[_key == $lang][0].value,
       }[0]`, params: {lang: lang}});
     return page;

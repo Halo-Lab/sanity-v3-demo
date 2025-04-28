@@ -25,36 +25,6 @@ export default {
         of: [{type: 'navItem'}],
       },
       {
-        name: 'conversionSubTitleInt',
-        title: 'Conversion Sub Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'conversionTrialInt',
-        title: 'Conversion Trial',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'conversionPlaceholderInt',
-        title: 'Conversion Placeholder',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'conversionTaglineInt',
-        title: 'Conversion Tagline',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'conversionTaglineLogo',
-        title: 'Conversion Tagline Logo',
-        type: 'image',
-      },
-      {
-        name: 'conversionImage',
-        title: 'Conversion Image',
-        type: 'image',
-      },
-      {
         name: 'footerLogo',
         title: 'Footer Logo',
         type: 'image',

@@ -5,6 +5,7 @@ import MobileApp from '../../scenes/Home/components/MobileApp/MobileApp';
 import Testimonials from '../../scenes/Home/components/Testimonials/Testimonials';
 import PartnersSection from '../../scenes/Home/components/Partners/Partners';
 import StatsSection from '../../scenes/Home/components/Stats/Stats';
+import ConversionSection from '../../components/Conversion/Conversion';
 
 export default function RenderSection({ section }) {
 	switch (section._type) {
@@ -20,6 +21,8 @@ export default function RenderSection({ section }) {
 			return <Testimonials {...section} />;
 		case "partnersSection":
 			return <PartnersSection {...section} />;
+		case "conversionSection":
+			return <ConversionSection {...section} />;
 		default:
 			console.warn(
 				`Unknown section type: ${(section as { _type: string })._type}`,

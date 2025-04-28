@@ -15,7 +15,7 @@ import {statsSection} from './statsSection';
 import {mediaTextSection} from './mediaTextSection';
 import {testimonialsSection} from './testimonialsSection';
 import {partnersSection} from './partnersSection';
-
+import {conversionSection} from './conversionSection';
 export const schemaTypes = [
   // Document types
   home,
@@ -39,4 +39,5 @@ export const schemaTypes = [
   mediaTextSection,
   testimonialsSection,
   partnersSection,
+  conversionSection,
 ]

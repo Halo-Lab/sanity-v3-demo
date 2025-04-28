@@ -5,7 +5,7 @@ import ReplyIcon from "../../assets/ReplyIcon/ReplyIcon";
 import ButtonSend from "../Buttons/ButtonSend/ButtonSend";
 import getImg from '../../utils/getImg';
 
-const Conversion = ({ data }) => {
+const Conversion = (data) => {
   const { conversionSubTitle, conversionTrial, conversionPlaceholder, conversionImage, conversionTagline, conversionTaglineLogo } = data;
 
   return (

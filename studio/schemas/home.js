@@ -18,6 +18,7 @@ export default defineType({
           { type: "mediaTextSection" },
           { type: "testimonialsSection" },
           { type: "partnersSection" },
+          { type: "conversionSection" },
         ],
       }),
     ],  

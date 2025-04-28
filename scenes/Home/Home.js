@@ -1,6 +1,5 @@
 "use client";
 import RenderSection from "../../components/sections/RenderSection";
-
 const Home = ({ page }) => {
   return (
     <div className="homepage">
