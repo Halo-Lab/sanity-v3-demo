@@ -8,7 +8,13 @@ import mobileAppItems from './mobileAppItems';
 import testimonialsItem from './testimonialsItem';
 import navItem from './navItem';
 import footerItem from './footerItem';
-import latestPost from './latestPost'
+import latestPost from './latestPost';
+import {heroSection} from './heroSection';
+import {benefitsSection} from './benefitsSection';
+import {statsSection} from './statsSection';
+import {mediaTextSection} from './mediaTextSection';
+import {testimonialsSection} from './testimonialsSection';
+import {partnersSection} from './partnersSection';
 
 export const schemaTypes = [
   // Document types
@@ -24,5 +30,13 @@ export const schemaTypes = [
   testimonialsItem,
   navItem,
   footerItem,
-  latestPost
+  latestPost,
+
+  // Sections
+  heroSection,
+  benefitsSection,
+  statsSection,
+  mediaTextSection,
+  testimonialsSection,
+  partnersSection,
 ]

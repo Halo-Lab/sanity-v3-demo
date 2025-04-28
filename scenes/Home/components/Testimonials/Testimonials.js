@@ -10,7 +10,7 @@ import "swiper/css";
 
 import SecondArrowIcon from "../../../../assets/SecondArrowIcon/SecondArrowIcon";
 
-const Testimonials = ({ data }) => {
+const Testimonials = (data) => {
   const swiperRef = useRef(null);
   const swiper = useSwiper();
 

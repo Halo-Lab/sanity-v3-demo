@@ -4,7 +4,16 @@ import { groq } from 'next-sanity';
 
 async function fetchHomeData(lang) {
   const data = await sanityFetch({query: groq`*[_type == "home"] {
-    ...,
+  "content": content[] {
+    _type == "heroSection" => {
+      ...,
+    "heroButton": heroButtonInt[_key == $lang][0].value,
+    "heroLink": heroLinkInt[_key == $lang][0].value,
+    "heroText": heroTextInt[_key == $lang][0].value,
+    "heroTitle": heroTitleInt[_key == $lang][0].value,
+    },
+    _type == "benefitsSection" => {
+      ...,
     "benefitsItems": benefitsItems[] {
     ...,
     "benefitsCardLink": benefitsCardLinkInt[_key == $lang][0].value,
@@ -15,18 +24,29 @@ async function fetchHomeData(lang) {
     "benefitsTitle": benefitsTitleInt[_key == $lang][0].value,
     "buttonHiddenText": buttonHiddenTextInt[_key == $lang][0].value,
     "buttonShowText": buttonShowTextInt[_key == $lang][0].value,
-    "heroButton": heroButtonInt[_key == $lang][0].value,
-    "heroLink": heroLinkInt[_key == $lang][0].value,
-    "heroText": heroTextInt[_key == $lang][0].value,
-    "heroTitle": heroTitleInt[_key == $lang][0].value,
-    "mobileAppButton": mobileAppButtonInt[_key == $lang][0].value,
-    "mobileAppSubTitle": mobileAppSubTitleInt[_key == $lang][0].value,
-    "mobileAppText": mobileAppTextInt[_key == $lang][0].value,
-    "mobileAppTitle": mobileAppTitleInt[_key == $lang][0].value,
-    "partnersSubTitle": partnersSubTitleInt[_key == $lang][0].value,
-    "partnersTitle": partnersTitleInt[_key == $lang][0].value,
-    "statsSubTitle": statsSubTitleInt[_key == $lang][0].value,
+    },
+    _type == "statsSection" => {
+      ...,
+          "statsSubTitle": statsSubTitleInt[_key == $lang][0].value,
     "statsTitle": statsTitleInt[_key == $lang][0].value,
+      "statsItems": statsItems[] {
+    ...,
+    "statsNumberDescription": statsNumberDescriptionInt[_key == $lang][0].value,
+  },
+    },
+    _type == "mediaTextSection" => {
+      ...,
+          "button": buttonInt[_key == $lang][0].value,
+    "subTitle": subTitleInt[_key == $lang][0].value,
+    "text": textInt[_key == $lang][0].value,
+    "title": titleInt[_key == $lang][0].value,
+      "mediaItems": mediaItems[] {
+    ...,
+    "text": textInt[_key == $lang][0].value,
+  },
+    },
+    _type == "testimonialsSection" => {
+      ...,
     "testimonialsSubTitle": testimonialsSubTitleInt[_key == $lang][0].value,
     "testimonialsTitle": testimonialsTitleInt[_key == $lang][0].value,
     "testimonialsItems": testimonialsItems[] {
@@ -35,15 +55,13 @@ async function fetchHomeData(lang) {
     "testimonialsCardSign": testimonialsCardSignInt[_key == $lang][0].value,
     "testimonialsCardText": testimonialsCardTextInt[_key == $lang][0].value,
   },
-  "statsItems": statsItems[] {
-    ...,
-    "statsNumberDescription": statsNumberDescriptionInt[_key == $lang][0].value,
-  },
-  "mobileAppItems": mobileAppItems[] {
-    ...,
-    "mobileAppFunctionText": mobileAppFunctionTextInt[_key == $lang][0].value,
-  },
-    }`, params: {lang: lang}});
+},
+    _type == "partnersSection" => {
+      ...,
+    "partnersSubTitle": partnersSubTitleInt[_key == $lang][0].value,
+    "partnersTitle": partnersTitleInt[_key == $lang][0].value,
+    },
+}}`, params: {lang: lang}});
   return data[0];
 }
 

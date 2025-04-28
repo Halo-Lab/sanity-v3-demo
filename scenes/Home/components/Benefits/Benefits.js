@@ -4,7 +4,7 @@ import BenefitsItem from "./BenefitsItem/BenefitsItem";
 import SecondArrowIcon from "../../../../assets/SecondArrowIcon/SecondArrowIcon";
 import classnames from "classnames";
 
-const Benefits = ({ data }) => {
+const Benefits = (data ) => {
   const { benefitsTitle, benefitsSubTitle,buttonShowText, buttonHiddenText } = data;
 
   const [isOpenBenefits, setIsOpenBenefits] = useState(true);

@@ -42,4 +42,16 @@ export default {
       type: 'internationalizedArrayString',
     },
   ],
+  preview: {
+    select: {
+        title: "benefitsCardTitleInt",
+        media: "benefitsCardLogo",
+    },
+    prepare({ title, media }) {
+        return {
+            title: `${title[0].value || ""}`,
+            media,
+        };
+    },
+},
 }

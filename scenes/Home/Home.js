@@ -1,20 +1,12 @@
 "use client";
-import Hero from "./components/Hero/Hero";
-import Partners from "./components/Partners/Partners";
-import Benefits from "./components/Benefits/Benefits";
-import Stats from "./components/Stats/Stats";
-import MobileApp from "./components/MobileApp/MobileApp";
-import Testimonials from "./components/Testimonials/Testimonials";
+import RenderSection from "../../components/sections/RenderSection";
 
 const Home = ({ page }) => {
   return (
     <div className="homepage">
-      <Hero data={page} />
-      <Partners data={page} />
-      <Benefits data={page} />
-      <Stats data={page} />
-      <MobileApp data={page} />
-      <Testimonials data={page} />
+      			{page.content?.map((section) => {
+				return <RenderSection key={section._key} section={section} />
+			})}
     </div>
   );
 };

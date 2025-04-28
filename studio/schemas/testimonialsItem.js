@@ -47,4 +47,16 @@ export default {
       type: 'internationalizedArrayString',
     },
   ],
+  preview: {
+    select: {
+        title: "testimonialsCardTextInt",
+        media: "testimonialsCardLogo",
+    },
+    prepare({ title, media }) {
+        return {
+            title: `${title[0].value || ""}`,
+            media,
+        };
+    },
+},
 }
