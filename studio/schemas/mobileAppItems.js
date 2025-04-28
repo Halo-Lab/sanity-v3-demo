@@ -1,23 +1,29 @@
 export default {
-  name: 'mobileAppItem',
-  title: 'Mobile App Item',  
+  name: 'mediaItem',
+  title: 'Media Item',  
   type: 'object',
   fields: [
     {
-      name: 'mobileAppFunctionLogo',
-      title: 'Mobile App Function Logo',
+      name: 'logo',
+      title: 'Logo',
       type: 'image',
-    },
+    },   
     {
-      name: 'mobileAppFunctionText',
-      title: 'Mobile App Function Text',
-      type: 'string',
-      hidden: true,
-    },    
-    {
-      name: 'mobileAppFunctionTextInt',
+      name: 'textInt',
       title: 'Mobile App Function Text',
       type: 'internationalizedArrayString',
     },    
   ],
+  preview: {
+    select: {
+        title: "textInt",
+        media: "logo",
+    },
+    prepare({ title, media }) {
+        return {
+            title: `${title[0].value || ""}`,
+            media,
+        };
+    },
+},
 }

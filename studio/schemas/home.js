@@ -1,255 +1,34 @@
-export default {
+import { defineField, defineType } from "sanity";
+import {HomeIcon} from '@sanity/icons'
+
+export default defineType({
     name: 'home',
     title: 'Home',
     type: 'document',
     fields: [
-      {
-        name: 'heroTitle',
-        title: 'Hero Title',
-        type: 'string',
-        hidden: true,
-      },      
-      {
-        name: 'heroTitleInt',
-        title: 'Hero Title',
-        type: 'internationalizedArrayString',
-      },      
-      {
-        name: 'heroText',
-        title: 'Hero Text',
-        type: 'string',
-        hidden: true,
+      defineField({
+        name: "content",
+        type: "array",
+        title: "Content",
+        description: "Add and arrange sections to build your page",
+        of: [
+          { type: "heroSection" },
+          { type: "benefitsSection" },
+          { type: "statsSection" },
+          { type: "mediaTextSection" },
+          { type: "testimonialsSection" },
+          { type: "partnersSection" },
+          { type: "conversionSection" },
+        ],
+      }),
+    ],  
+    preview: {
+
+      prepare() {
+          return {
+              title: "Home Page",
+              media: HomeIcon,
+          };
       },
-      {
-        name: 'heroTextInt',
-        title: 'Hero Text',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'heroButton',
-        title: 'Hero Button',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'heroButtonInt',
-        title: 'Hero Button',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'heroButtonHref',
-        title: 'Hero Button Href',
-        type: 'string',
-      },
-      {
-        name: 'heroLink',
-        title: 'Hero Link',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'heroLinkInt',
-        title: 'Hero Link',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'heroLinkHref',
-        title: 'Hero Link Href',
-        type: 'string',
-      },
-      {
-        name: 'heroImage',
-        title: 'Hero Image',
-        type: 'image',
-      },
-      {
-        name: 'partnersTitle',
-        title: 'Partners Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'partnersTitleInt',
-        title: 'Partners Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'partnersSubTitle',
-        title: 'Partners Sub Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'partnersSubTitleInt',
-        title: 'Partners Sub Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'partnersItems',
-        title: 'Partners Items',
-        type: 'array',
-        of: [{type: 'partnersItem'}],
-      },
-      {
-        name: 'benefitsTitle',
-        title: 'Benefits Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'benefitsTitleInt',
-        title: 'Benefits Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'benefitsSubTitle',
-        title: 'Benefits Sub Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'benefitsSubTitleInt',
-        title: 'Benefits Sub Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'buttonShowText',
-        title: 'Button Show Text',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'buttonShowTextInt',
-        title: 'Button Show Text',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'buttonHiddenText',
-        title: 'Button Hidden Text',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'buttonHiddenTextInt',
-        title: 'Button Hidden Text',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'benefitsItems',
-        title: 'Benefits Items',
-        type: 'array',
-        of: [{type: 'benefitsItem'}],
-      },
-      {
-        name: 'statsTitle',
-        title: 'Stats Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'statsTitleInt',
-        title: 'Stats Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'statsSubTitle',
-        title: 'Stats Sub Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'statsSubTitleInt',
-        title: 'Stats Sub Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'statsItems',
-        title: 'Stats Items',
-        type: 'array',
-        of: [{type: 'statsItem'}],
-      },
-      {
-        name: 'mobileAppTitle',
-        title: 'Mobile App Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'mobileAppTitleInt',
-        title: 'Mobile App Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'mobileAppSubTitle',
-        title: 'Mobile App Sub Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'mobileAppSubTitleInt',
-        title: 'Mobile App Sub Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'mobileAppText',
-        title: 'Mobile App Text',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'mobileAppTextInt',
-        title: 'Mobile App Text',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'mobileAppButton',
-        title: 'Mobile App Button',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'mobileAppButtonInt',
-        title: 'Mobile App Button',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'mobileAppImage',
-        title: 'Mobile App Image',
-        type: 'image',
-      },
-      {
-        name: 'mobileAppItems',
-        title: 'Mobile App Items',
-        type: 'array',
-        of: [{type: 'mobileAppItem'}],
-      },
-      {
-        name: 'testimonialsTitle',
-        title: 'Testimonials Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'testimonialsTitleInt',
-        title: 'Testimonials Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'testimonialsSubTitle',
-        title: 'Testimonials Sub Title',
-        type: 'string',
-        hidden: true,
-      },
-      {
-        name: 'testimonialsSubTitleInt',
-        title: 'Testimonials Sub Title',
-        type: 'internationalizedArrayString',
-      },
-      {
-        name: 'testimonialsItems',
-        title: 'Testimonials Items',
-        type: 'array',
-        of: [{type: 'testimonialsItem'}],
-      },
-    ],   
-  }
+  },
+  })

@@ -1,6 +1,5 @@
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-import Conversion from '../Conversion/Conversion'
 
 
 function Layout({ data, lang, children }) {
@@ -10,7 +9,7 @@ function Layout({ data, lang, children }) {
       <Header data={data} lang={lang} />
 
          <main>{children}</main>
-      <Conversion data={data} />
+
       <Footer data={data} />
     </div>
   );

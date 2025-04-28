@@ -9,21 +9,9 @@ export default {
       type: 'image',
     },
     {
-      name: 'benefitsCardTitle',
-      title: 'Benefits Card Title',
-      type: 'string',
-      hidden: true,
-    },
-    {
       name: 'benefitsCardTitleInt',
       title: 'Benefits Card Title',
       type: 'internationalizedArrayString',
-    },
-    {
-      name: 'benefitsCardText',
-      title: 'Benefits Card Text',
-      type: 'string',
-      hidden: true,
     },
     {
       name: 'benefitsCardTextInt',
@@ -31,15 +19,21 @@ export default {
       type: 'internationalizedArrayString',
     },
     {
-      name: 'benefitsCardLink',
-      title: 'Benefits Card Link',
-      type: 'string',
-      hidden: true,
-    },
-    {
       name: 'benefitsCardLinkInt',
       title: 'Benefits Card Link',
       type: 'internationalizedArrayString',
     },
   ],
+  preview: {
+    select: {
+        title: "benefitsCardTitleInt",
+        media: "benefitsCardLogo",
+    },
+    prepare({ title, media }) {
+        return {
+            title: `${title[0].value || ""}`,
+            media,
+        };
+    },
+},
 }

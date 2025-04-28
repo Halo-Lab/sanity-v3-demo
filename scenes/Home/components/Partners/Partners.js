@@ -1,7 +1,7 @@
 import s from "./Partners.module.scss";
 import PartnersItem from "./PartnersItem/PartnersItem";
 
-const Partners = ({ data }) => {
+const Partners = (data) => {
   const { partnersTitle, partnersSubTitle, partnersItems } = data;
 
   const partnersItem = partnersItems.map((item, index) => {

@@ -3,7 +3,7 @@ import getImg from '../../../../utils/getImg'
 import ButtonPrimary from "../../../../components/Buttons/ButtonPrimary/ButtonPrimary";
 import ButtonWithArrow from "../../../../components/Buttons/ButtonWithArrow/ButtonWithArrow";
 
-const Hero = ({ data }) => {
+const Hero = (data) => {
   const {heroTitle, heroText, heroButton, heroButtonHref, heroLink, heroLinkHref, heroImage} = data;
 
   return (

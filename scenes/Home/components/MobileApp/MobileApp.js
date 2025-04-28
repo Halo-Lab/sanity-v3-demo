@@ -4,10 +4,10 @@ import MobileAppFunction from "./MobileAppFunction/MobileAppFunction";
 import classnames from "classnames";
 import getImg from '../../../../utils/getImg';
 
-const MobileApp = ({ data }) => {
-  const { mobileAppTitle, mobileAppSubTitle, mobileAppText, mobileAppButton, mobileAppImage, mobileAppItems } = data;
+const MobileApp = (data) => {
+  const { title, subTitle, text, button, image, mediaItems } = data;
 
-  const mobileAppFunctions = mobileAppItems.map((item, index) => {
+  const mobileAppFunctions = mediaItems.map((item, index) => {
     return <MobileAppFunction data={item} key={index} />;
   });
 
@@ -28,7 +28,7 @@ const MobileApp = ({ data }) => {
                   </div>
                   <img
                     className={s.mobileAppImg}
-                    src={getImg(mobileAppImage)}
+                    src={getImg(image)}
                     alt={''}
                   />
                 </div>
@@ -36,12 +36,12 @@ const MobileApp = ({ data }) => {
             </div>
             <div className={s.mobileAppInfo}>
               <span className="section-category section-category--inner">
-                {mobileAppTitle}
+                {title}
               </span>
-              <h3 className="section-title section-title--inner">{mobileAppSubTitle}</h3>
-              <p className={s.mobileAppDesc}>{mobileAppText}</p>
+              <h3 className="section-title section-title--inner">{subTitle}</h3>
+              <p className={s.mobileAppDesc}>{text}</p>
               <div className={s.mobileAppFooter}>
-                <ButtonPrimary buttonText={mobileAppButton} />
+                <ButtonPrimary buttonText={button} />
               </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
 import s from "./Stats.module.scss";
 import StatsItem from "./StatsItem/StatsItem";
 
-const Stats = ({ data }) => { 
+const Stats = (data) => { 
   const { statsTitle, statsSubTitle } = data;
 
   const statsItems = data.statsItems.map((item, index) => {
