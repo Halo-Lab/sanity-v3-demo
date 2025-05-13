@@ -85,6 +85,12 @@ export const CONVERSION_SECTION_QUERY = `
 `;
 
 export const HOME_PAGE_SECTIONS_QUERY = groq`*[_type == "home"] {
+  "seo": seo{
+    ...,
+    "title": title[_key == $lang][0].value,
+    "description": description[_key == $lang][0].value,
+    "image": image
+  },
   "content": content[] {
     ${HERO_SECTION_QUERY},
     ${BENEFITS_SECTION_QUERY},
@@ -94,4 +100,24 @@ export const HOME_PAGE_SECTIONS_QUERY = groq`*[_type == "home"] {
     ${PARTNERS_SECTION_QUERY},
     ${CONVERSION_SECTION_QUERY},
   }
+}`;
+
+export const BLOG_PAGE_QUERY = groq`*[_type == "blog"][0] {
+  "seo": seo{
+    ...,
+    "title": title[_key == $lang][0].value,
+    "description": description[_key == $lang][0].value,
+    "image": image
+  },
+  ...,
+  "blogHeroLinkName": blogHeroLinkNameInt[_key == $lang][0].value,
+  "blogHeroText": blogHeroTextInt[_key == $lang][0].value,
+  "blogHeroTitle": blogHeroTitleInt[_key == $lang][0].value,
+  "latestPosts": latestPosts[]{
+    ...,
+    "latestPostsText": latestPostsTextInt[_key == $lang][0].value,
+    "latestPostsTitle": latestPostsTitleInt[_key == $lang][0].value,
+  },
+  "recommendPostsSubTitle": recommendPostsSubTitleInt[_key == $lang][0].value,
+  "recommendPostsTitle": recommendPostsTitleInt[_key == $lang][0].value,
 }`; 
