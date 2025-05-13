@@ -16,6 +16,8 @@ import {mediaTextSection} from './mediaTextSection';
 import {testimonialsSection} from './testimonialsSection';
 import {partnersSection} from './partnersSection';
 import {conversionSection} from './conversionSection';
+import seo from './seo';
+
 export const schemaTypes = [
   // Document types
   home,
@@ -31,6 +33,7 @@ export const schemaTypes = [
   navItem,
   footerItem,
   latestPost,
+  seo,
 
   // Sections
   heroSection,

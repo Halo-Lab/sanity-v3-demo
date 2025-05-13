@@ -1,6 +1,7 @@
 import Post from '../../../../scenes/Post/Post';
 import sanityFetch from '../../../../constants/sanityClient';
 import { groq } from 'next-sanity';
+import { BLOG_PAGE_QUERY } from '../../../../constants/queries';
 
 async function fetchBlogData(lang) {
   const data = await sanityFetch({query: groq`*[_type == "blog"] {
@@ -29,4 +30,20 @@ export default async function PostPage(props) {
     <Post data={page} slug={slug} lang={lang} />     
   </div>
   );
+}
+
+export async function generateMetadata({ params }) {
+  const { lang } = params;
+  const data = await sanityFetch({
+    query: BLOG_PAGE_QUERY,
+    params: { lang },
+  });
+  const seo = data?.seo || {};
+  return {
+    title: seo.title || 'Blog Post | Sanity Demo',
+    description: seo.description || '',
+    openGraph: seo.image ? {
+      images: [{ url: getImg(seo.image) }],
+    } : undefined,
+  };
 }
