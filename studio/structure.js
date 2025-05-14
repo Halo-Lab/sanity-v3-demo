@@ -4,6 +4,7 @@ export const structure = (S) =>
     .items([
       S.documentTypeListItem("home").title("Home"),
       S.documentTypeListItem("blog").title("Blog"),
+      S.documentTypeListItem("article").title("Article"),
       S.divider(),
       S.documentTypeListItem("layout").title("Layout"),
     ]);

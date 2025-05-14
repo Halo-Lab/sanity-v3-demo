@@ -8,18 +8,16 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const renderPosts = (data, lang) => {
-  const postData = data.latestPosts.slice(0, 3);
-  const postsList = postData.map(item => {
-    return <PostCard key={item.latestPostsLink} post={item} lang={lang} />;
+  const postsList = data.map(item => {
+    return <PostCard key={item._id} post={item} lang={lang} />;
   });
   return postsList;
 };
 
 const renderSwiperPosts = (data, lang) => {
-  const postData = data.latestPosts.slice(0, 4);
-  const postsList = postData.map(item => {
+  const postsList = data.map(item => {
     return (
-      <SwiperSlide key={item.latestPostsLink}>
+      <SwiperSlide key={item._id}>
         <PostCard post={item} lang={lang} />
       </SwiperSlide>
     );
@@ -46,9 +44,7 @@ const swiperPost = (data, lang) => {
   ); 
 };
 
-const RecommendPosts = ({data, lang}) => {  
-  const {recommendPostsTitle, recommendPostsSubTitle} = data;
-
+const RecommendPosts = ({data, lang, recommendedText}) => {  
   const [isMobile, setMobile] = useState(false);
   const screenWidth = useMediaQuery({ query: "(max-width: 754px)" });
 
@@ -60,8 +56,11 @@ const RecommendPosts = ({data, lang}) => {
     <div className={styles.posts}>
       <div className="container">
         <div className={styles.recommend_head}>
-          <p className="section-category">{recommendPostsTitle}</p>
-          <h2 className="section-title">{recommendPostsSubTitle}</h2>
+          <p className="section-category">{recommendedText.subTitle}
+
+</p>
+          <h2 className="section-title">{recommendedText.title}
+          </h2>
           </div>
         <div className={styles.postsInner}>
           {isMobile ? swiperPost(data, lang) : renderPosts(data, lang)}
