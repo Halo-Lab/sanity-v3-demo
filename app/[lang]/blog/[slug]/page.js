@@ -1,29 +1,18 @@
 import Post from '../../../../scenes/Post/Post';
 import sanityFetch from '../../../../constants/sanityClient';
 import { groq } from 'next-sanity';
-import { BLOG_PAGE_QUERY } from '../../../../constants/queries';
+import { ARTICLE_PAGE_QUERY } from '../../../../constants/queries';
+import getImg from '../../../../utils/getImg';
 
-async function fetchBlogData(lang) {
-  const data = await sanityFetch({query: groq`*[_type == "blog"] {
-    ...,
-    "blogHeroLinkName": blogHeroLinkNameInt[_key == $lang][0].value,
-    "blogHeroText": blogHeroTextInt[_key == $lang][0].value,
-    "blogHeroTitle": blogHeroTitleInt[_key == $lang][0].value,
-    "latestPosts": latestPosts[]{
-    ...,
-    "latestPostsText": latestPostsTextInt[_key == $lang][0].value,
-    "latestPostsTitle": latestPostsTitleInt[_key == $lang][0].value,
-    },
-    "recommendPostsSubTitle": recommendPostsSubTitleInt[_key == $lang][0].value,
-    "recommendPostsTitle": recommendPostsTitleInt[_key == $lang][0].value,
-  }`,params: {lang: lang}});
-  return data[0];
+async function fetchArticleData(lang, slug) {
+  const data = await sanityFetch({query: ARTICLE_PAGE_QUERY, params: {lang: lang, slug: slug}});
+  return data;
 }
 
 export default async function PostPage(props) {
   const { lang, slug } = await props.params;
 
-  const page = await fetchBlogData(lang);
+  const page = await fetchArticleData(lang, slug);
 
   return (
     <div>      
@@ -32,18 +21,20 @@ export default async function PostPage(props) {
   );
 }
 
-export async function generateMetadata({ params }) {
-  const { lang } = params;
+export async function generateMetadata(props) {
+  const { lang, slug } = await props.params;
   const data = await sanityFetch({
-    query: BLOG_PAGE_QUERY,
-    params: { lang },
+    query: ARTICLE_PAGE_QUERY,
+    params: { lang, slug },
   });
   const seo = data?.seo || {};
   return {
-    title: seo.title || 'Blog Post | Sanity Demo',
-    description: seo.description || '',
+    title: seo.title ?? data.title ?? 'Blog Post | Sanity Demo',
+    description: seo.description ?? data.content ?? '',
     openGraph: seo.image ? {
       images: [{ url: getImg(seo.image) }],
+    } : data?.image ? {
+      images: [{ url: getImg(data.image) }],
     } : undefined,
   };
 }

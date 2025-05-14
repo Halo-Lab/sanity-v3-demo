@@ -17,13 +17,14 @@ import {testimonialsSection} from './testimonialsSection';
 import {partnersSection} from './partnersSection';
 import {conversionSection} from './conversionSection';
 import seo from './seo';
+import article from './article';
 
 export const schemaTypes = [
   // Document types
   home,
   layout,
   blog,
-
+  article,
   // Other Types
   partnersItem,
   benefitsItem,

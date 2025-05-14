@@ -7,7 +7,7 @@ const Post = ({ data, slug, lang }) => {
   return (
     <div className={styles.wrapper}>
       <BlogPost data={data} slug={slug} />
-      <RecommendPosts data={data} lang={lang} />
+      <RecommendPosts data={data.recommended} recommendedText={data.recommendedText} lang={lang} />
     </div>
   );
 };

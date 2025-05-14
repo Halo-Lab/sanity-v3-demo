@@ -102,22 +102,64 @@ export const HOME_PAGE_SECTIONS_QUERY = groq`*[_type == "home"] {
   }
 }`;
 
-export const BLOG_PAGE_QUERY = groq`*[_type == "blog"][0] {
+export const BLOG_PAGE_SEO_QUERY = groq`*[_type == "blog"][0] {
   "seo": seo{
-    ...,
+    _id,
     "title": title[_key == $lang][0].value,
     "description": description[_key == $lang][0].value,
     "image": image
   },
-  ...,
-  "blogHeroLinkName": blogHeroLinkNameInt[_key == $lang][0].value,
-  "blogHeroText": blogHeroTextInt[_key == $lang][0].value,
-  "blogHeroTitle": blogHeroTitleInt[_key == $lang][0].value,
-  "latestPosts": latestPosts[]{
-    ...,
-    "latestPostsText": latestPostsTextInt[_key == $lang][0].value,
-    "latestPostsTitle": latestPostsTitleInt[_key == $lang][0].value,
+}`;
+
+export const BLOG_PAGE_QUERY = groq`*[_type == "blog"][0] {
+  "mainArticle": mainArticle->{
+   _id,
+    "title": titleInt[_key == $lang][0].value,
+    date,
+    "content": contentInt[_key == $lang][0].value,
+  image,
+  imageCover,
+link,
+},
+"mainArticleLink": mainArticleLink[_key == $lang][0].value,
+"articles": *[_type == "article" && _id != ^.mainArticle._ref] {
+  _id,
+  "title": titleInt[_key == $lang][0].value,
+  date,
+  "content": contentInt[_key == $lang][0].value,
+  image,
+  imageCover,
+  link,
   },
-  "recommendPostsSubTitle": recommendPostsSubTitleInt[_key == $lang][0].value,
-  "recommendPostsTitle": recommendPostsTitleInt[_key == $lang][0].value,
+}`; 
+
+export const ARTICLE_PAGE_SEO_QUERY = groq`*[_type == "article"][0] {
+,
+}`;
+export const ARTICLE_PAGE_QUERY = groq`*[_type == "article" && link.current == $slug][0] {
+  "seo": seo{
+    _id,
+    "title": title[_key == $lang][0].value,
+    "description": description[_key == $lang][0].value,
+    "image": image
+  },
+    "title": titleInt[_key == $lang][0].value,
+    date,
+    "content": contentInt[_key == $lang][0].value,
+    image,
+    imageCover,
+    link,
+  "recommended": recommended[]->{
+  _id,
+  "title": titleInt[_key == $lang][0].value,
+  date,
+  "content": contentInt[_key == $lang][0].value,
+  image,
+  imageCover,
+  link,
+  },
+  "recommendedText": *[_type == "blog"][0] {
+    "title": recommendedArticlesTitle[_key == $lang][0].value,
+    "subTitle": recommendedArticlesSubTitle[_key == $lang][0].value,
+  }
 }`; 

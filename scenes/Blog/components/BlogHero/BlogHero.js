@@ -4,6 +4,8 @@ import ButtonPrimary from "../../../../components/Buttons/ButtonPrimary/ButtonPr
 import ArrowIcon from "../../../../assets/ArrowIcon/ArrowIcon";
 import cutDescription from '../../../../utils/cutDescription';
 import getImg from '../../../../utils/getImg'
+import Image from 'next/image';
+
 export function sanitizeSlug(slug) {
   // Remove invisible Unicode characters
   return slug
@@ -13,30 +15,33 @@ export function sanitizeSlug(slug) {
 }
 
 const BlogHero = ({ data, lang }) => {
-  const { blogHeroTitle, blogHeroText, blogHeroLinkHref, blogHeroImage, blogHeroLinkName } = data;
+  const { title, content, link, image, mainArticleLink } = data;
 
   return (
     <div className="hero">
       <div className="container">
         <div className={styles.heroInner}>
           <div className={styles.heroContent}>
-            <h1 className={styles.heroTitle}>{blogHeroTitle}</h1>
+            <h1 className={styles.heroTitle}>{title}</h1>
             <p className={styles.heroSubtitle}>
-              {cutDescription(blogHeroText, 189)}
+              {cutDescription(content, 189)}
             </p>
             <ButtonPrimary
-              buttonLink={`/${lang}/blog/${sanitizeSlug(blogHeroLinkHref)}`}
+              buttonLink={`/${lang}/blog/${sanitizeSlug(link.current)}`}
               mod="button--regular"
               Icon={ArrowIcon}
-              buttonText={blogHeroLinkName}
+              buttonText={mainArticleLink}
             />
           </div>
           <div className={styles.heroImage}>
-            <img
+            <Image
               className="heroImg"
-              src={getImg(blogHeroImage)}
+              src={getImg(image)}
               alt={''}
               loading="eager"
+              width={1000}
+              height={1000}
+              priority
             />
           </div>
         </div>
