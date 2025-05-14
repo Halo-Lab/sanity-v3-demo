@@ -29,8 +29,8 @@ export async function generateMetadata(props) {
   });
   const seo = data?.seo || {};
   return {
-    title: seo.title || data.title || 'Blog Post | Sanity Demo',
-    description: seo.description || data.content || '',
+    title: seo.title ?? data.title ?? 'Blog Post | Sanity Demo',
+    description: seo.description ?? data.content ?? '',
     openGraph: seo.image ? {
       images: [{ url: getImg(seo.image) }],
     } : data?.image ? {
