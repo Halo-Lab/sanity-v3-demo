@@ -18,6 +18,7 @@ import {partnersSection} from './partnersSection';
 import {conversionSection} from './conversionSection';
 import seo from './seo';
 import article from './article';
+import config from './config';
 
 export const schemaTypes = [
   // Document types
@@ -35,7 +36,7 @@ export const schemaTypes = [
   footerItem,
   latestPost,
   seo,
-
+  config,
   // Sections
   heroSection,
   benefitsSection,

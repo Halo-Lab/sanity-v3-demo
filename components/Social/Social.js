@@ -4,16 +4,16 @@ import getImg from '../../utils/getImg'
 
 const Social = ({ footerSocialsArr }) => {
   const socialLinks = footerSocialsArr.map((item, index) => {
-    const { footerSocialLogo, footerSocialName, footerSocialLink } = item;
+    const { icon, name, url } = item;
 
     return (
       <li className={styles.socialItem} key={index}>
-        <a href={footerSocialLink}>
+        <a href={url}>
           <img
             className={styles.socialIcon}
             loading="lazy"
-            src={getImg(footerSocialLogo)}
-            alt={footerSocialName}
+            src={getImg(icon)}
+            alt={name}
           />
         </a>
       </li>

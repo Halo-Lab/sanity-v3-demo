@@ -4,17 +4,16 @@ import styles from "./Footer.module.scss";
 import getImg from '../../utils/getImg'
 import Social from "../Social/Social";
 
-const Footer = ({ data }) => {
-  const { footerLogo, footerText, footerHaloText, footerHaloLogo, footerItems } = data;
-
+const Footer = ({ data, socials }) => {
+  const { logo, footerText, footerHaloText, footerHaloLogo } = data;
   return (
     <footer className={styles.footer}>
       <div className="container">
         <div className={styles.footerTop}>
           <Link href="/">
-            <img className="logo" src={getImg(footerLogo)} />
+            <img className="logo" src={getImg(logo)} />
           </Link>
-          <Social footerSocialsArr={footerItems} />
+          <Social footerSocialsArr={socials.socials} />
         </div>
         <div className={styles.footerBottom}>
           <div className={styles.copyright}>

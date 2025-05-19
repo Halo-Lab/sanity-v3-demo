@@ -7,8 +7,7 @@ import getImg from '../../utils/getImg';
 import LocaleSwitcher from '../../components/LanguageSwitcher/LanguageSwitcher';
 
 const Header = ({ data, lang }) => {
-  const {logo, buttonLink, buttonText, navItems} = data;
-
+  const {logo, buttonLink, buttonText, navigation} = data;
   return (
     <header className={styles.header}>
       <div className="container">
@@ -17,7 +16,7 @@ const Header = ({ data, lang }) => {
             <img className="logo" src={getImg(logo)} />
           </Link>
           <div className={styles.headerRight}>
-            <Navigation headerLinkArr={navItems} lang={lang} />
+            <Navigation headerLinkArr={navigation.navigation} lang={lang} />
             <LocaleSwitcher />
             <ButtonPrimary
               buttonLink={buttonLink}
@@ -26,7 +25,7 @@ const Header = ({ data, lang }) => {
             />
           </div>
           <Sandwich
-            headerLinkArr={navItems}
+            headerLinkArr={navigation.navigation}
             buttonLink={buttonLink}
             buttonText={buttonText}
             lang={lang}

@@ -23,7 +23,16 @@ export default defineType({
         title: 'SEO',
         type: 'seo',
         group: 'seo',
-      }), 
+      }),
+      defineField({
+        name: 'slug',
+        title: 'Slug',
+        type: 'string',
+        group: 'content',
+        readOnly: true,
+        initialValue: "Blog"
+
+      }),
       defineField({
         name: 'mainArticle',
         title: 'Main Article',

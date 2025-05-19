@@ -3,14 +3,13 @@ import Footer from "../Footer/Footer";
 
 
 function Layout({ data, lang, children }) {
-
   return (
     <div>
-      <Header data={data} lang={lang} />
+      <Header data={data.header} lang={lang} />
 
          <main>{children}</main>
 
-      <Footer data={data} />
+      <Footer data={data.footer} socials={data.socials} lang={lang} />
     </div>
   );
 }

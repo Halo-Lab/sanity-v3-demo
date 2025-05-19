@@ -6,5 +6,13 @@ export const structure = (S) =>
       S.documentTypeListItem("blog").title("Blog"),
       S.documentTypeListItem("article").title("Article"),
       S.divider(),
-      S.documentTypeListItem("layout").title("Layout"),
+      // S.documentTypeListItem("layout").title("Layout"),
+      S.listItem()
+      .title('Config')
+      .child(
+        S.document()
+          .schemaType('config')
+          .documentId('config')
+          .title('Config'))
+          
     ]);

@@ -20,15 +20,28 @@ export async function generateStaticParams() {
 
 async function fetchLayoutData(lang) {
   try {
-    const page = await sanityFetch({query: groq`*[_type == "layout"]{
-      ...,
+    const page = await sanityFetch({query: groq`*[_type == "config"]{
+      _id,
+      "header": header{
+      "logo": logo,
+        "navigation": navigation {
+          "navigation": navigation[]{
+                      "linkName": linkNameInt[_key == "en"][0].value,
+          "link": link->{_id, slug},
+          }
+        },
       "buttonText": buttonTextInt[_key == $lang][0].value,
-      "navItems": navItems[]{
-      ...,
-      "linkName": linkNameInt[_key == $lang][0].value,
+      "buttonLink": buttonLink,
       },
-      "footerText": footerTextInt[_key == $lang][0].value,
-      }[0]`, params: {lang: lang}});
+      "footer": footer{
+        "logo": logo,
+        "footerText": footerTextInt[_key == $lang][0].value,
+        "footerHaloText": footerHaloText,
+        "footerHaloLogo": footerHaloLogo,
+        "footerHaloLink": footerHaloLink,
+      },
+      "socials": socials,
+    }[0]`, params: {lang: lang}});
     return page;
   } catch (error) {
     return null;
@@ -41,7 +54,6 @@ export default async function Root(props) {
   const { children } = props;
 
   const data = await fetchLayoutData(params.lang);    
-
   return (
     <html lang={params.lang}>
       <body>
